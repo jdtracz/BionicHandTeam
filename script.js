@@ -1,5 +1,22 @@
-var CONTACT="CHANGE_ME@example.com";
-var m=document.getElementById("m");m.textContent=CONTACT;m.href="mailto:"+CONTACT;
-document.getElementById("f").addEventListener("submit",function(ev){ev.preventDefault();
-var e=document.getElementById("e").value,r=document.getElementById("r").value;
-location.href="mailto:"+CONTACT+"?subject="+encodeURIComponent("Bionic hand tests - "+r)+"&body="+encodeURIComponent("Please contact me about testing the bionic hand.\nRole: "+r+"\nEmail: "+e);});
+"use strict";
+const steps = document.querySelector(".steps");
+const controls = document.querySelector(".scroll-controls");
+if (steps && controls) {
+  controls.hidden = false;
+  const prev = controls.querySelector('[data-direction="-1"]');
+  const next = controls.querySelector('[data-direction="1"]');
+  function update() {
+    prev.disabled = steps.scrollLeft <= 2;
+    next.disabled = steps.scrollLeft + steps.clientWidth >= steps.scrollWidth - 2;
+  }
+  controls.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
+    const card = steps.querySelector("article");
+    const gap = parseFloat(getComputedStyle(steps).gap) || 18;
+    steps.scrollBy({left: Number(button.dataset.direction) * (card.getBoundingClientRect().width + gap), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"});
+  });
+  steps.addEventListener("scroll", update, {passive: true});
+  window.addEventListener("resize", update);
+  update();
+}

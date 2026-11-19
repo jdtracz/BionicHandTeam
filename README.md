@@ -1,6 +1,17 @@
-# Bionic Hand site
-1. Replace assets/prosthesis.jpg with your prosthesis photo (same name, ~900x1200 px, <300 KB).
-2. In script.js change CONTACT to your real email.
-3. Push to GitHub repo "bionic-hand" (public). Settings > Pages > Deploy from branch > main / root.
-4. Site: https://<login>.github.io/bionic-hand/
-Contact form opens the visitor's email client (no backend). For stored sign-ups use Formspree or Google Forms later.
+# Aktualizacja istniejącej strony
+
+Wgraj zawartość tego folderu do głównego katalogu obecnego repozytorium BionicHandTeam.
+Nadpisz index.html, style.css, script.js, prosthesis.jpg i team.jpg.
+Nie wgrywaj ZIP ani nadrzędnego folderu website-update: index.html ma leżeć w katalogu głównym.
+Nie zmieniaj nazwy repozytorium ani ustawień Pages.
+
+Zdjęcia są w katalogu głównym, a nie assets/. Formularz to zewnętrzny link Microsoft Forms.
+Nie ma lokalnego zbierania danych ani formularza mailto. Adresy kontaktowe to osobne linki.
+
+Tekst angielski, zdjęcia bez przycinania. Na telefonach do 700 px: większe osobne karty zespołu.
+Roadmapa: przewijanie palcem lub przyciski. Bez JavaScript link do formularza nadal działa.
+Aktualizacja danych wg finalnej prezentacji: TRL 4, 1 patent + 2 zgłoszenia, plan do 2029.
+Cel masy usunięty z kafelka z powodu sprzecznych wartości w starszych materiałach.
+Statystyki porzuceń zastąpiono opisem, aby nie publikować niesprawdzonych uogólnień.
+
+Przed publikacją sprawdź na telefonie i PC oraz dostępność Microsoft Forms bez logowania.
